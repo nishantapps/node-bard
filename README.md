@@ -64,3 +64,24 @@ Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs
         </tr>
     </tbody>
 </table>
+
+<h1><img src="https://raw.githubusercontent.com/mezotv/discord-badges/main/assets/discordbughunter2.svg" width="50px"> Bug Hunters</h1>
+
+Thanks goes to these wonderful people for getting bugs in our app  ([:hugs:](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-BUG-HUNTER-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+    <tbody>
+        <tr>
+            <td align="center">
+    <a href="https://dsc.gg/nishantapps-community">
+        <img style="border-radius:50%;" src="https://cdn.discordapp.com/avatars/793482727223590922/1505e99841dbffd52ae7eb02450efbc0.webp?size=4096" width="100px;" alt="npmnishantsharma"/>
+        <br />
+        <sub><b>Dae</b></sub>
+    </a>
+</td>
+        </tr>
+    </tbody>
+</table>
