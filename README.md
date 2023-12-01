@@ -82,8 +82,6 @@ Thanks goes to these wonderful people for getting bugs in our app  ([:hugs:](htt
         <sub><b>Dae</b></sub>
     </a>
 </td>
-        </tr>
-        <tr>
             <td align="center">
     <a href="https://dsc.gg/nishantapps-community">
         <img style="border-radius:50%;" src="https://cdn.discordapp.com/avatars/783661052738011176/f7a9f1ee9b131406713192235aba4050.webp?size=1024&width=0&height=320" width="100px;" alt="npmnishantsharma"/>
