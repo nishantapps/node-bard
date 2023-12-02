@@ -1,65 +1,62 @@
-const axios = require('axios');
-const translate = require('translate-google');
-const langdetect = require('langdetect');
+const axios = require("axios");
+const translate = require("translate-google");
+const franc = require("franc");
 
-let config = {};
+let args = {};
 
-function setConfig(newConfig) {
-  config = { ...config, ...newConfig };
+function setConfig(config) {
+  args = config;
 }
 
-function getVersion() {
-  return require('./package.json').version;
+function version() {
+  return require("./package.json").version;
 }
 
-async function translateText(text, fromLang, toLang) {
+async function translateText(text, toLanguage) {
   try {
-    const translatedText = await translate(text, { from: fromLang, to: toLang });
-    return translatedText;
+    return await translate(text, { to: toLanguage });
   } catch (error) {
-    throw new Error(`Translation error: ${error.message}`);
+    throw new Error(`[TRANSLATE] Translation failed: ${error.message}`);
   }
 }
 
-async function requestApi(prompt) {
+async function makeApiRequest(message) {
   try {
-    const translatedPrompt = await translateText(prompt, 'auto', 'en');
-
     const options = {
-      method: 'GET',
-      url: 'https://google-bard1.p.rapidapi.com/',
+      method: "GET",
+      url: "https://google-bard1.p.rapidapi.com/",
       headers: {
-        userid: config.userid,
-        message: translatedPrompt,
-        key: config.key,
-        'X-RapidAPI-Key': config.apikey,
-        'X-RapidAPI-Host': 'google-bard1.p.rapidapi.com',
+        userid: args.userid,
+        message,
+        key: args.key,
+        "X-RapidAPI-Key": args.apikey,
+        "X-RapidAPI-Host": "google-bard1.p.rapidapi.com",
       },
     };
 
     const response = await axios.request(options);
-    const detectedLang = langdetect.detectOne(prompt);
-    const translatedResponse = await translateText(response.data.response, 'en', detectedLang);
-
-    return translatedResponse;
+    return response.data.response;
   } catch (error) {
-    throw new Error(`API request error: ${error.message}`);
+    throw new Error(`[API] Request failed: ${error.message}`);
   }
 }
 
 async function createText(prompt) {
   try {
-    const response = await requestApi(prompt);
-    return response;
-  } catch (error) {
-    throw new Error(`Text creation error: ${error.message}`);
+    const detectedLangCode = franc(prompt);
+    const detectedLang = translate.languages[detectedLangCode];
+    const translatedPrompt = await translateText(prompt, "en");
+    const apiResponse = await makeApiRequest(translatedPrompt);
+    const translatedResponse = await translateText(apiResponse, detectedLang);
+
+    return translatedResponse;
+  } catch (err) {
+    throw new Error(err);
   }
 }
 
 module.exports = {
   setConfig,
-  getVersion,
+  version,
   createText,
-  translateText, // Expose translateText for external use. (Optional)
-  requestApi, // Expose requestApi for external use. (Optional)
 };
