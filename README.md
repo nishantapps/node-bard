@@ -1,115 +1,96 @@
-<div align="center">
-<img src="https://cdn.discordapp.com/attachments/1093272554405376161/1173565821243641897/logo.png?ex=65646b57&is=6551f657&hm=c88ba4c5c18ec0d187a1e62f640b2ab63e0f6ead0b7030d5ad77683a141a12cb&" width="100px" height="100px">
-    <p style="font-style:bold;"><b>Node Bard | A perfect module to get AI to your projects</b></p>
-    <img src="https://github.com/nishantapps/node-bard/actions/workflows/npm-publish.yml/badge.svg">
-    <a href="https://discord.gg/Fnt6qDrJGQ"><img src="https://img.shields.io/discord/1167478609905205430?logo=discord&label=Discord"></a>
-</div>
+<p align="center">
+    <img src="https://cdn.discordapp.com/attachments/1093272554405376161/1173565821243641897/logo.png?ex=65646b57&is=6551f657&hm=c88ba4c5c18ec0d187a1e62f640b2ab63e0f6ead0b7030d5ad77683a141a12cb&" width="100px" height="100px">
+</p>
+<h1 align="center"><b>Node Bard | AI-Powered Modules for Your Projects</b></h1>
+<p align="center">Empower your projects with artificial intelligence using Node Bard.</p>
+<p align="center">
+    <a href="https://github.com/nishantapps/node-bard/actions/workflows/npm-publish.yml">
+        <img src="https://github.com/nishantapps/node-bard/actions/workflows/npm-publish.yml/badge.svg" alt="Build Status">
+    </a>
+    <a href="https://discord.gg/Fnt6qDrJGQ">
+        <img src="https://img.shields.io/discord/1167478609905205430?logo=discord&label=Discord" alt="Discord Server">
+    </a>
+    <a href="https://npmjs.com/package/@nishantapps/node-bard">
+        <img src="https://img.shields.io/npm/v/@nishantapps/node-bard" alt="npm version">
+    </a>
+    <a href="https://npmjs.com/package/@nishantapps/node-bard">
+        <img src="https://img.shields.io/npm/dt/@nishantapps/node-bard" alt="npm downloads">
+    </a>
+</p>
 
+## Table of Contents
 
-### Installation
+- [Installation](#installation)
+- [Usage](#usage)
+- [FAQ](#faq)
+- [Contributors](#contributors)
+- [Bug Hunters](#bug-hunters)
+- [Support](#support)
+- [Contribution Guidelines](#contribution-guidelines)
 
-Open command prompt and type:
-``` shell
-npm i @nishantapps/node-bard
+## Installation
+
+To integrate Node Bard into your project, open your terminal and execute the following command:
+
+```shell
+npm install @nishantapps/node-bard
 ```
 
-### Usage
+## Usage
 
-```js
+Utilize the magic of Node Bard by adding the following code to your project:
+
+```javascript
 const bard = require('@nishantapps/node-javaris');
 
 const config = {
-    userid:'<user id><see faq to get it>',
-    key:'<makersuite key>',
-    apikey:'<rapid-api key>'
+    userid: '<your_user_id>', // Obtain your user ID from Discord
+    key: '<your_makersuite_key>', // Acquire from https://makersuite.google.com
+    apikey: '<your_rapid_api_key>', // Your RapidAPI key
 };
 
 bard.setConfig(config);
 
 async function main() {
-  try {
-    const prompt = 'नमस्ते, मैं निशांत शर्मा हूं';
-    
-    // Translate the prompt to English or any lang. 
-    const translatedText = await bard.translateText(prompt, 'auto', 'en');
-
-    // Create text using Bard API, Clean version:
-    const createdText = await bard.createText(translatedText);
-
-    console.log(createdText);
-
-    // try & catch method.
-  } catch (error) {
-    console.error(`Error in main function: ${error.message}`);
-  }
+    const result = await bard.createText('Your text goes here');
+    console.log(result);
 }
 
 main();
 ```
 
-### Faq:
+## Frequently Asked Questions
 
->How to get key?
+### How to Get the Key?
 
---> Go to https://makersuite.google.com and get it from there
+Visit [Makersuite](https://makersuite.google.com) and obtain your key.
 
-> Where to get userid?
+### Where to Get User ID?
 
---> Go to our discord server https://discord.gg/Fnt6qDrJGQ and execute the command in #register channel: ``/register``. You will get your userid in your dms
+Join our [Discord server](https://discord.gg/Fnt6qDrJGQ) and execute the command `/register` in the #register channel. Your user ID will be sent to your DM.
 
-# Contributers
+## Contributors
 
+A big thank you to our amazing contributors:
 
-Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs/en/emoji-key)):
+| [![npmnishantsharma](https://avatars.githubusercontent.com/u/99231654?v=4)](https://github.com/npmnishantsharma) | [![Alpha5959](https://avatars.githubusercontent.com/u/109584578?v=4)](https://github.com/Alpha5959) |
+|:---:|:---:|
+| [**npmnishantsharma**](https://github.com/npmnishantsharma) | [**Alpha5959**](https://github.com/Alpha5959) |
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-    <tbody>
-        <tr>
-            <td align="center">
-    <a href="https://github.com/npmnishantsharma">
-        <img style="border-radius:50%;" src="https://avatars.githubusercontent.com/u/99231654?v=4" width="100px;" alt="npmnishantsharma"/>
-        <br />
-        <sub><b>npmnishantsharma</b></sub>
-    </a>
-</td>
-            <td align="center">
-    <a href="https://github.com/Alpha5959">
-        <img style="border-radius:50%;" src="https://avatars.githubusercontent.com/u/109584578?v=4" width="100px;" alt="npmnishantsharma"/>
-        <br />
-        <sub><b>npmnishantsharma</b></sub>
-    </a>
-</td>
-        </tr>
-    </tbody>
-</table>
+## Bug Hunters
 
-<h1><img src="https://raw.githubusercontent.com/mezotv/discord-badges/main/assets/discordbughunter2.svg" width="50px"> Bug Hunters</h1>
+Big shoutout to these brilliant bug hunters:
 
-Thanks goes to these wonderful people for getting bugs in our app  ([:hugs:](https://allcontributors.org/docs/en/emoji-key)):
+| [![Dae](https://cdn.discordapp.com/avatars/793482727223590922/1505e99841dbffd52ae7eb02450efbc0.webp?size=4096)](https://dsc.gg/nishantapps-community) | [![Alpha](https://cdn.discordapp.com/avatars/783661052738011176/f7a9f1ee9b131406713192235aba4050.webp?size=1024&width=0&height=320)](https://dsc.gg/nishantapps-community) |
+|:---:|:---:|
+| [**Dae**](https://dsc.gg/nishantapps-community) | [**Alpha**](https://dsc.gg/nishantapps-community) |
 
-<!-- ALL-BUG-HUNTER-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-    <tbody style="display:flex;">
-        <tr>
-            <td align="center">
-    <a href="https://dsc.gg/nishantapps-community">
-        <img style="border-radius:50%;" src="https://cdn.discordapp.com/avatars/793482727223590922/1505e99841dbffd52ae7eb02450efbc0.webp?size=4096" width="100px;" alt="npmnishantsharma"/>
-        <br />
-        <sub><b>Dae</b></sub>
-    </a>
-</td>
-            <td align="center">
-    <a href="https://dsc.gg/nishantapps-community">
-        <img style="border-radius:50%;" src="https://cdn.discordapp.com/avatars/783661052738011176/f7a9f1ee9b131406713192235aba4050.webp?size=1024&width=0&height=320" width="100px;" alt="npmnishantsharma"/>
-        <br />
-        <sub><b>Alpha</b></sub>
-    </a>
-</td>
-        </tr>
-    </tbody>
-</table>
+## Support
+
+For any queries or assistance, feel free to join our [Discord server](https://discord.gg/Fnt6qDrJGQ).
+
+## Contribution Guidelines
+
+Interested in contributing? Just fork this project and request a pull.
+
+).
