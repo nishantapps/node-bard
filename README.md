@@ -27,7 +27,21 @@ const config = {
 bard.setConfig(config);
 
 async function main() {
-    console.log(await bard.createText('text'))
+  try {
+    const prompt = 'नमस्ते, मैं निशांत शर्मा हूं';
+    
+    // Translate the prompt to English or any lang. 
+    const translatedText = await bard.translateText(prompt, 'auto', 'en');
+
+    // Create text using Bard API, Clean version:
+    const createdText = await bard.createText(translatedText);
+
+    console.log(createdText);
+
+    // try & catch method.
+  } catch (error) {
+    console.error(`Error in main function: ${error.message}`);
+  }
 }
 
 main();
