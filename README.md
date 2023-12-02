@@ -61,6 +61,14 @@ Thanks goes to these wonderful people ([:hugs:](https://allcontributors.org/docs
         <sub><b>npmnishantsharma</b></sub>
     </a>
 </td>
+ <td align="center">
+    <a href="https://github.com/Alpha5959">
+        <img style="border-radius:50%;" src="https://avatars.githubusercontent.com/u/109584578?v=4" width="100px;" alt="npmnishantsharma"/>
+        <br />
+        <sub><b>npmnishantsharma</b></sub>
+    </a>
+</td>
+            
         </tr>
     </tbody>
 </table>
