@@ -1,6 +1,6 @@
 {
   "name": "@nishantapps/node-bard",
-  "version": "1.5.0",
+  "version": "1.5.5",
   "description": "This package will help you use bard api easily.",
   "main": "src/index.cjs",
   "type": "module",
