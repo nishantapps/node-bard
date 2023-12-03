@@ -2,10 +2,10 @@
   "name": "@nishantapps/node-bard",
   "version": "1.5.5",
   "description": "This package will help you use bard api easily.",
-  "main": "src/index.cjs",
+  "main": "src/index.mjs",
   "type": "module",
   "scripts": {
-    "test": "node src/test.js"
+    "test": "node src/test.mjs"
   },
   "author": "NishantApps",
   "license": "Apache-2.0",
