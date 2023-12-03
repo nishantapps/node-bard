@@ -16,32 +16,18 @@ npm i @nishantapps/node-bard
 ### Usage
 
 ```js
-const bard = require('@nishantapps/node-javaris');
-
+import {setConfig,createText} from '@nishantapps/node-bard'
 const config = {
-    userid:'<user id><see faq to get it>',
-    key:'<makersuite key>',
-    apikey:'<rapid-api key>'
+    userid:'userid',
+    key:'makersuite.google.com key',
+    apikey:'rapidapi key'
 };
 
-bard.setConfig(config);
+setConfig(config);
+
 
 async function main() {
-  try {
-    const prompt = 'नमस्ते, मैं निशांत शर्मा हूं';
-    
-    // Translate the prompt to English or any lang. 
-    const translatedText = await bard.translateText(prompt, 'auto', 'en');
-
-    // Create text using Bard API, Clean version:
-    const createdText = await bard.createText(translatedText);
-
-    console.log(createdText);
-
-    // try & catch method.
-  } catch (error) {
-    console.error(`Error in main function: ${error.message}`);
-  }
+    console.log(await createText('Привет братан'))
 }
 
 main();
